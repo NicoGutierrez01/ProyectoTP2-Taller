@@ -1,156 +1,143 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections;
 
 public class PlayerBike : MonoBehaviour
 {
+    public CargaManager cargaManager;
+
     [Header("Velocidad")]
-    public float maxSpeed = 7f;
-    public float acceleration = 15f;
-    public float deceleration = 20f;
+    public float acceleration = 2f;
+    public float maxSpeed = 12f;
+    public float decelerationTime = 1.5f;
 
-    [Header("Salto")]
-    public float jumpForce = 8f;
-    public float jumpTime = 0.25f; // tiempo máximo de salto mantenido
-
-    [Header("Pirueta")]
-    public float trickRotateSpeed = 300f;
+    [Header("Willy")]
+    public float willyRotateSpeed = 100f;
 
     [Header("Botones")]
-    public Button forwardButton;
-    public Button backButton;
-    public Button jumpButton;
-    public Button trickButton;
+    public Button brakeButton;
+    public Button willyButton;
 
     private Rigidbody2D rb;
+
     private bool isGrounded = true;
-    private bool isMovingForward = false;
-    private bool isMovingBack = false;
-    private bool isDoingTrick = false;
-    private bool didTrick = false;
+    private bool isBraking = false;
+    private bool isDoingWilly = false;
 
     private float currentVelocityX = 0f;
 
-    // Salto sensible
-    private bool isJumping = false;
-    private float jumpTimeCounter = 0f;
+    // Variables para detectar impacto
+    private float velocidadCaidaAnterior = 0f;
+    private bool estabaEnElAire = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        // Eventos de botones táctiles
-        EventTriggerButton(forwardButton, () => isMovingForward = true, () => isMovingForward = false);
-        EventTriggerButton(backButton,   () => isMovingBack = true,    () => isMovingBack = false);
-        EventTriggerButton(jumpButton,   JumpStart, JumpEnd);
-        EventTriggerButton(trickButton,  () => isDoingTrick = true, () => isDoingTrick = false);
+        rb.inertia = 1f;
+        rb.angularDrag = 5f;
+
+        EventTriggerButton(brakeButton, () => isBraking = true, () => isBraking = false);
+        EventTriggerButton(willyButton, () => isDoingWilly = true, () => isDoingWilly = false);
     }
 
     void Update()
     {
-        // Movimiento con aceleración
-        float targetVelocityX = 0f;
-        if (isMovingForward) targetVelocityX = maxSpeed;
-        else if (isMovingBack) targetVelocityX = -maxSpeed;
+        float targetVelocityX = isBraking ? 0f : maxSpeed;
 
-        currentVelocityX = Mathf.MoveTowards(currentVelocityX, targetVelocityX,
-            (targetVelocityX == 0 ? deceleration : acceleration) * Time.deltaTime);
+        if (isBraking)
+        {
+            float speedChangePerSecond = maxSpeed / decelerationTime;
+            currentVelocityX = Mathf.MoveTowards(currentVelocityX, 0f, speedChangePerSecond * Time.deltaTime);
+        }
+        else
+        {
+            currentVelocityX = Mathf.MoveTowards(currentVelocityX, maxSpeed, acceleration * Time.deltaTime);
+        }
 
         rb.velocity = new Vector2(currentVelocityX, rb.velocity.y);
 
-        // Piruetas en el aire
-        if (!isGrounded && isDoingTrick)
+        // Willy
+        if (isGrounded && isDoingWilly)
         {
-            transform.Rotate(0, 0, trickRotateSpeed * Time.deltaTime);
-            didTrick = true;
+            transform.Rotate(0, 0, willyRotateSpeed * Time.deltaTime);
+        }
+        if (rb.velocity.y > 5f || Mathf.Abs(transform.eulerAngles.z) > 25f)
+        {
+            cargaManager.SoltarTodos();
         }
 
-        // Salto mantenido
-        JumpHold();
-    }
-
-    // ---------------------
-    // SALTO PRESIONADO
-    // ---------------------
-    void JumpStart()
-    {
-        if (isGrounded)
-        {
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            isGrounded = false;
-        }
-    }
-
-    void JumpHold()
-    {
-        if (isJumping)
-        {
-            if (jumpTimeCounter > 0)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                jumpTimeCounter -= Time.deltaTime;
-            }
-            else
-            {
-                isJumping = false;
-            }
-        }
-    }
-
-    void JumpEnd()
-    {
-        isJumping = false;
-    }
-
-    // ---------------------
-    // PIRUETAS
-    // ---------------------
-    void TrickSuccess()
-    {
-        Debug.Log("¡Pirueta exitosa!");
-        // Acá podés sumar puntos, partículas, etc.
+        // ▲▲▲ Fin lógica de impacto ▲▲▲
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        foreach (ContactPoint2D contact in collision.contacts)
         {
-            isGrounded = true;
-
-            // Evaluar pirueta
-            if (didTrick)
+            if (Vector2.Dot(contact.normal, Vector2.up) > 0.5f)
             {
-                float rotZ = transform.eulerAngles.z % 360;
-                if (rotZ < 10f || rotZ > 350f)
-                    TrickSuccess();
-                else
-                    Debug.Log("Cayó mal la pirueta...");
-
-                didTrick = false;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+                isGrounded = true;
+                break;
             }
+        }
+
+        if (!isDoingWilly)
+        {
+            StartCoroutine(ResetRotation());
         }
     }
 
-    // ---------------------
-    // BOTONES TÁCTILES
-    // ---------------------
+    IEnumerator ResetRotation()
+    {
+        float elapsed = 0f;
+        float duration = 0.3f;
+        Quaternion startRot = transform.rotation;
+        Quaternion endRot = Quaternion.Euler(0, 0, 0);
+
+        while (elapsed < duration)
+        {
+            transform.rotation = Quaternion.Slerp(startRot, endRot, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.rotation = endRot;
+    }
+
+    void FixedUpdate()
+    {
+        if (isGrounded && !isDoingWilly)
+        {
+            float zRotation = transform.eulerAngles.z;
+            if (zRotation > 180) zRotation -= 360;
+            float clampedRotation = Mathf.Clamp(zRotation, -15f, 15f);
+            transform.rotation = Quaternion.Euler(0, 0, clampedRotation);
+        }
+    }
+
     void EventTriggerButton(Button btn, System.Action onPress, System.Action onRelease)
     {
-        var trigger = btn.gameObject.AddComponent<UnityEngine.EventSystems.EventTrigger>();
+        var trigger = btn.gameObject.AddComponent<EventTrigger>();
 
-        var entryDown = new UnityEngine.EventSystems.EventTrigger.Entry();
-        entryDown.eventID = UnityEngine.EventSystems.EventTriggerType.PointerDown;
+        var entryDown = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
         entryDown.callback.AddListener((e) => onPress?.Invoke());
         trigger.triggers.Add(entryDown);
 
         if (onRelease != null)
         {
-            var entryUp = new UnityEngine.EventSystems.EventTrigger.Entry();
-            entryUp.eventID = UnityEngine.EventSystems.EventTriggerType.PointerUp;
+            var entryUp = new EventTrigger.Entry { eventID = EventTriggerType.PointerUp };
             entryUp.callback.AddListener((e) => onRelease?.Invoke());
             trigger.triggers.Add(entryUp);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PowerUp"))
+        {
+            cargaManager.AgregarPaquete();
+            Destroy(other.gameObject);
         }
     }
 }

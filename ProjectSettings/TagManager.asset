@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Obstacle
+  - LoopBooster
+  - Estrella
+  - PowerUp
   layers:
   - Default
   - TransparentFX

@@ -6,4 +6,6 @@ public class SceneData : MonoBehaviour
 {
     public static int menu = 0;
     public static int game = 1;
+
+    public static int nivel2 = 2;
 }
