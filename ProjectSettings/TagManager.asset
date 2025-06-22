@@ -9,6 +9,8 @@ TagManager:
   - LoopBooster
   - Estrella
   - PowerUp
+  - RuedaDelantera
+  - ObstaculoFrontal
   layers:
   - Default
   - TransparentFX

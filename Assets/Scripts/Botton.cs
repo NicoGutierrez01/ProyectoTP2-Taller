@@ -19,6 +19,6 @@ public class Botton : MonoBehaviour
     
     public void gotoGame()
     {
-        SceneManager.LoadScene(SceneData.game);
+        SceneManager.LoadScene(SceneData.nivelselect);
     }
 }

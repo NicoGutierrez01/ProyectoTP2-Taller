@@ -1,0 +1,911 @@
+fileFormatVersion: 2
+guid: 91e6e65e550b15b499c6ab4dc9a36a26
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 1
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 50
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: obstaculos_3_0
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 966
+        width: 6
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 11, y: -64}
+        - {x: 11, y: -20}
+        - {x: 11, y: 3}
+        - {x: 25, y: 3}
+        - {x: 64, y: 3}
+        - {x: 64, y: -20}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35883f4dad7f92a48b7b70fb1f506ba5
+      internalID: -1255431028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_1
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 966
+        width: 6
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 2}
+        - {x: 64, y: 2}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e889fab2079ec3a4ebe4e7b3eb2379bf
+      internalID: -916755506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 804
+        width: 133
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 2}
+        - {x: -58, y: 2}
+        - {x: -58, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41322ff8116175a4a9ecf74b049e2889
+      internalID: -110395825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_3
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 780
+        width: 444
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 0}
+        - {x: 6, y: 0}
+        - {x: 6, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28390b5c61a2ff84291fbefea15671dc
+      internalID: -1775764692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_4
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 804
+        width: 252
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -28, y: -64}
+        - {x: -29, y: 15}
+        - {x: 48, y: 15}
+        - {x: 64, y: -2}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d4802787800b64d90563c8f98b4963
+      internalID: -1957017553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 834
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: -3}
+        - {x: -39, y: -31}
+        - {x: -8, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4245cbf8d37ed4c4b9c852b25bed1bc9
+      internalID: -2072700221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_6
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 834
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cead1a68fa2651049b365f3da9db1c56
+      internalID: 1740036652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_7
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 528
+        width: 366
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cedc2f63d416f4e458e189532378f119
+      internalID: 2083184810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_8
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 540
+        width: 239
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2, y: -24}
+        - {x: 2, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec3b54df090cad46ad0a6bbbc8ec9f4
+      internalID: 474244347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 756
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -25}
+        - {x: -64, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -25}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c15d17fe5c43f4383158fb8551c975
+      internalID: 2142487519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_10
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 708
+        width: 6
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -24}
+        - {x: -64, y: 64}
+        - {x: -47, y: 64}
+        - {x: -47, y: -24}
+      - - {x: 41, y: -25}
+        - {x: 41, y: 0}
+        - {x: 64, y: 0}
+        - {x: 64, y: -25}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f578985c50d0ae45bf8cd3ec38fc2e0
+      internalID: -1451275792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_11
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 552
+        width: 225
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -25}
+        - {x: -64, y: 64}
+        - {x: 44, y: 64}
+        - {x: 44, y: -25}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7609ebad7dffc4b8cd1b21a2f4bae6
+      internalID: 826933333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_12
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 354
+        width: 215
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -28, y: -27}
+        - {x: -28, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -27}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4359c3d6d466a8e4abb48696181085c7
+      internalID: -1899645918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_13
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 510
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -26}
+        - {x: -64, y: 64}
+        - {x: -9, y: 64}
+        - {x: 26, y: 32}
+        - {x: 64, y: 5}
+        - {x: 64, y: -27}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea728e1089432bd4aa3f03c9f7f57248
+      internalID: -1485453613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_14
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 444
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -63, y: -26}
+        - {x: -64, y: 6}
+        - {x: -32, y: -11}
+        - {x: 8, y: -25}
+        - {x: 8, y: -26}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26cb2902a2dae0e458428dc14b354d8d
+      internalID: 1377541925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_15
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 371
+        width: 111
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b1e061226a1f940912e1e9f4c7f467
+      internalID: -1246345336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_16
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 342
+        width: 499
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 5, y: -64}
+        - {x: 5, y: 24}
+        - {x: 64, y: 24}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0826d8cd8763c1347a71eb94c60f2adf
+      internalID: 385631967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_17
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 324
+        width: 6
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 24}
+        - {x: -13, y: 24}
+        - {x: 21, y: 1}
+        - {x: 42, y: -12}
+        - {x: 64, y: -22}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b01ee9f5d627b44e9e07788247faecf
+      internalID: -1406896897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_18
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 330
+        width: 6
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 44, y: -32}
+        - {x: 22, y: -38}
+        - {x: 5, y: -41}
+        - {x: -13, y: -41}
+        - {x: -41, y: -39}
+        - {x: -64, y: -34}
+        - {x: -64, y: -21}
+        - {x: -40, y: -28}
+        - {x: -26, y: -31}
+        - {x: -13, y: -31}
+        - {x: 5, y: -31}
+        - {x: 22, y: -27}
+        - {x: 42, y: -21}
+        - {x: 64, y: -11}
+        - {x: 64, y: -24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c236a897e06bf94086a939bf1df63ad
+      internalID: -1367764535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_19
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 162
+        width: 462
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -38, y: -7}
+        - {x: -64, y: -24}
+        - {x: -64, y: -11}
+        - {x: -41, y: 3}
+        - {x: -17, y: 21}
+        - {x: -17, y: 8}
+      - - {x: 41, y: -64}
+        - {x: 41, y: 3}
+        - {x: 64, y: 3}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585bda9355ff15748baccf331554861b
+      internalID: 2077864413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_20
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 72
+        width: 303
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 3}
+        - {x: 64, y: 3}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25821c951bf717b408d178adb4b8b5f2
+      internalID: 827842968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_21
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 282
+        width: 6
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 3}
+        - {x: -7, y: 3}
+        - {x: -7, y: -64}
+      - - {x: 37, y: -64}
+        - {x: 37, y: 55}
+        - {x: 64, y: 55}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91693a8e298a5de4ba2a679b1a564f86
+      internalID: -1807685919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_22
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 300
+        width: 6
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 55}
+        - {x: 64, y: 55}
+        - {x: 64, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d550f8b67a88eab47b145cfe5696a8a8
+      internalID: -1976698856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_23
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 36
+        width: 652
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -64}
+        - {x: -64, y: 55}
+        - {x: -54, y: 55}
+        - {x: -54, y: -47}
+        - {x: -2, y: -47}
+        - {x: -2, y: -64}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dad3d17c64b4a64291c648ee9dee861
+      internalID: -2094014120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_24
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 120
+        width: 12
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 4, y: -17}
+        - {x: 4, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -17}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae46ccf45abb9604998244885af8195a
+      internalID: -1989743809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_25
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 60
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -17}
+        - {x: -64, y: 64}
+        - {x: 19, y: 64}
+        - {x: 31, y: 49}
+        - {x: 44, y: 38}
+        - {x: 64, y: 24}
+        - {x: 64, y: -17}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee29bf200f68c943b4f6249943503bc
+      internalID: -996616517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_26
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 24
+        width: 6
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: -17}
+        - {x: -64, y: 24}
+        - {x: -38, y: 9}
+        - {x: -11, y: -4}
+        - {x: 30, y: -13}
+        - {x: 30, y: -17}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2330fc71f1e118a4c92a2630d870595b
+      internalID: 743493156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: obstaculos_3_27
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 24
+        width: 6
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 34, y: -18}
+        - {x: 34, y: 64}
+        - {x: 64, y: 64}
+        - {x: 64, y: -18}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc346933abdbe0469cceab32d4ee45a
+      internalID: 986919169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      obstaculos_3_0: -1255431028
+      obstaculos_3_1: -916755506
+      obstaculos_3_10: -1451275792
+      obstaculos_3_11: 826933333
+      obstaculos_3_12: -1899645918
+      obstaculos_3_13: -1485453613
+      obstaculos_3_14: 1377541925
+      obstaculos_3_15: -1246345336
+      obstaculos_3_16: 385631967
+      obstaculos_3_17: -1406896897
+      obstaculos_3_18: -1367764535
+      obstaculos_3_19: 2077864413
+      obstaculos_3_2: -110395825
+      obstaculos_3_20: 827842968
+      obstaculos_3_21: -1807685919
+      obstaculos_3_22: -1976698856
+      obstaculos_3_23: -2094014120
+      obstaculos_3_24: -1989743809
+      obstaculos_3_25: -996616517
+      obstaculos_3_26: 743493156
+      obstaculos_3_27: 986919169
+      obstaculos_3_3: -1775764692
+      obstaculos_3_4: -1957017553
+      obstaculos_3_5: -2072700221
+      obstaculos_3_6: 1740036652
+      obstaculos_3_7: 2083184810
+      obstaculos_3_8: 474244347
+      obstaculos_3_9: 2142487519
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

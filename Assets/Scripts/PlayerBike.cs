@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PlayerBike : MonoBehaviour
@@ -26,10 +27,8 @@ public class PlayerBike : MonoBehaviour
     private bool isDoingWilly = false;
 
     private float currentVelocityX = 0f;
-
-    // Variables para detectar impacto
     private float velocidadCaidaAnterior = 0f;
-    private bool estabaEnElAire = false;
+    private bool haCaido = false;
 
     void Start()
     {
@@ -44,6 +43,8 @@ public class PlayerBike : MonoBehaviour
 
     void Update()
     {
+        if (haCaido) return; // No hacer nada si ya se cayó
+
         float targetVelocityX = isBraking ? 0f : maxSpeed;
 
         if (isBraking)
@@ -63,12 +64,26 @@ public class PlayerBike : MonoBehaviour
         {
             transform.Rotate(0, 0, willyRotateSpeed * Time.deltaTime);
         }
-        if (rb.velocity.y > 5f || Mathf.Abs(transform.eulerAngles.z) > 25f)
+
+        // Guardar velocidad vertical mientras cae
+        if (rb.velocity.y < velocidadCaidaAnterior)
         {
-            cargaManager.SoltarTodos();
+            velocidadCaidaAnterior = rb.velocity.y;
         }
 
-        // ▲▲▲ Fin lógica de impacto ▲▲▲
+        // Detectar caída por dar vuelta
+        float rotZ = transform.eulerAngles.z;
+        if (!haCaido && (rotZ > 110f && rotZ < 250f))
+        {
+            haCaido = true;
+
+            // Detener movimiento y rotación
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            rb.bodyType = RigidbodyType2D.Static;
+
+            StartCoroutine(ReiniciarNivelTrasCaida());
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -81,6 +96,14 @@ public class PlayerBike : MonoBehaviour
                 break;
             }
         }
+
+        // Soltar carga solo si la caída fue fuerte
+        if (velocidadCaidaAnterior < -7f)
+        {
+            cargaManager.SoltarTodos();
+        }
+
+        velocidadCaidaAnterior = 0f;
 
         if (!isDoingWilly)
         {
@@ -103,17 +126,6 @@ public class PlayerBike : MonoBehaviour
         }
 
         transform.rotation = endRot;
-    }
-
-    void FixedUpdate()
-    {
-        if (isGrounded && !isDoingWilly)
-        {
-            float zRotation = transform.eulerAngles.z;
-            if (zRotation > 180) zRotation -= 360;
-            float clampedRotation = Mathf.Clamp(zRotation, -15f, 15f);
-            transform.rotation = Quaternion.Euler(0, 0, clampedRotation);
-        }
     }
 
     void EventTriggerButton(Button btn, System.Action onPress, System.Action onRelease)
@@ -140,4 +152,12 @@ public class PlayerBike : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+    IEnumerator ReiniciarNivelTrasCaida()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    
 }
